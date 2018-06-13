@@ -18,6 +18,7 @@
         <maven.compiler.target>1.9</maven.compiler.target>
         <maven.compiler.source>1.9</maven.compiler.source>
         <version.maven.compiler.plugin>3.6.0</version.maven.compiler.plugin>
+        <version.jackson>2.9.5</version.jackson>
     </properties>
 
     <build>
@@ -27,14 +28,43 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven.compiler.plugin}</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <source>1.9</source>
+                    <target>1.9</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     
     <dependencies>
+
+			<!-- https://mvnrepository.com/artifact/org.json/json -->
+			<dependency>
+			    <groupId>org.json</groupId>
+			    <artifactId>json</artifactId>
+			    <version>20180130</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-core</artifactId>
+			    <version>${version.jackson}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-annotations</artifactId>
+			    <version>${version.jackson}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+			<dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-databind</artifactId>
+			    <version>${version.jackson}</version>
+			</dependency>
+
 
 			<!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
 			<dependency>
@@ -86,10 +116,11 @@
 			    <scope>test</scope>
 			</dependency>
 
+			<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
 			<dependency>
 			    <groupId>org.slf4j</groupId>
 			    <artifactId>slf4j-log4j12</artifactId>
-			    <version>${version.slfj4}</version>
+			    <version>${version.slf4j}</version>
 			    <scope>test</scope>
 			</dependency>
     

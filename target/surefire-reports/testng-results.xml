@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2018-06-13T03:36:12Z" name="Command line suite" finished-at="2018-06-13T03:36:13Z" duration-ms="247">
+    <groups>
+    </groups>
+    <test started-at="2018-06-13T03:36:12Z" name="Command line test" finished-at="2018-06-13T03:36:13Z" duration-ms="247">
+      <class name="com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest@670002]" started-at="2018-06-13T03:36:12Z" name="setUp" description="Inicializando recursos para teste de LoginRequestMessage..." finished-at="2018-06-13T03:36:12Z" duration-ms="276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest@1f0f1111]" started-at="2018-06-13T03:36:12Z" name="setUp" description="Inicializando recursos para teste de LoginRequestMessage..." finished-at="2018-06-13T03:36:12Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testDeserialize(java.lang.String)[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest@670002]" started-at="2018-06-13T03:36:13Z" name="testDeserialize" description="Testing Json deserialization." data-provider="dataProviderJson" finished-at="2018-06-13T03:36:13Z" duration-ms="167" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{ "imei": "7997444561", "serialNumber": "7997444561", "sim": "34234324", "swVersion": "EN_0.21-8.25-8.5.0-16.64" }]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeserialize -->
+        <test-method signature="testSerialize(com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessagePayload)[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest@670002]" started-at="2018-06-13T03:36:13Z" name="testSerialize" description="Testing Json serialization." data-provider="dataProviderObject" finished-at="2018-06-13T03:36:13Z" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginRequestMessagePayload(imei=7997444561, serialNumber=7997444561, sim=34234324, swVersion=EN_0.21-8.25-8.5.0-16.64)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSerialize -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest@1f0f1111]" started-at="2018-06-13T03:36:13Z" name="tearDown" description="Finalizando recursos para teste de LoginRequestMessage..." finished-at="2018-06-13T03:36:13Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest@670002]" started-at="2018-06-13T03:36:13Z" name="tearDown" description="Finalizando recursos para teste de LoginRequestMessage..." finished-at="2018-06-13T03:36:13Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest -->
+      <class name="com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest">
+        <test-method signature="testDeserialize(java.lang.String)[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest@1f0f1111]" started-at="2018-06-13T03:36:13Z" name="testDeserialize" description="Testing Json deserialization." data-provider="dataProviderJson" finished-at="2018-06-13T03:36:13Z" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{ "gpsCycle": 30,"gpsSampleCycle": 3, "dataStreamCycle": 30, "dataStreamSampleCycle": 30 }]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeserialize -->
+        <test-method signature="testSerialize(com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessagePayload)[pri:0, instance:com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest@1f0f1111]" started-at="2018-06-13T03:36:13Z" name="testSerialize" description="Testing Json serialization." data-provider="dataProviderObject" finished-at="2018-06-13T03:36:13Z" duration-ms="12" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginResponseMessagePayload(gpsCycle=30, gpsSampleCycle=3, dataStreamCycle=30, dataStreamSampleCycle=30)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSerialize -->
+      </class> <!-- com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
