@@ -4,14 +4,37 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 12/06/2018
+ * 
+ * DESCRIPTION:
+ * Transmit GPS data
+ * 
+ * TRIGGER MECHANISM:
+ * The device collects GPS data at a fixed frequency and stores it locally. 
+ * The GPS data will be upload at a fixed frequency given I login response message
+ * 
+ * 
+ * Contains positioning data gathered through GPS/GLONASS hardware.
+ * The device stores and sends any location it has at the time of location sampling. No matter its accuracy or its speed. 
+ *
+ */
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 
 @SuppressWarnings("serial")
@@ -40,9 +63,9 @@ public class GPSDataMessagePayload implements MessagePayload {
 	private Double accuracy;
 	
 	/** escolher tipo primitivo ou string??**/
-	//@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
-	//private Date eventTime;
-	private String eventTime;
+	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
+	private Date eventTime;
+	//private String eventTime;
 	
 	private Double carSpeed;
 	

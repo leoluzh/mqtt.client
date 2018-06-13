@@ -3,6 +3,10 @@ package com.lambdasys.iot.mqtt.client.entities;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.Date;
+
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,11 +25,12 @@ import lombok.NoArgsConstructor;
 public class Message<T> implements Serializable {
 
 	protected ObjectMapper objectMapper;
-	
+	protected DateTimeFormatter formatter;
 	protected Class<T> payload;
 	
 	{
 		this.objectMapper = new ObjectMapper();
+		this.formatter = DateTimeFormat.forPattern( MessagePayload.EVENT_TIME_PATTERN );
 		this.payload = getTypeParameterEntityClazz();
 	}
 	
@@ -50,6 +55,10 @@ public class Message<T> implements Serializable {
     
     public String serialize( T object ) throws JsonProcessingException {
     	return this.objectMapper.writeValueAsString( object );
+    }
+    
+    public Date strToDate( String date ) {
+    	return this.formatter.parseDateTime( date ).toDate();
     }
     
 }

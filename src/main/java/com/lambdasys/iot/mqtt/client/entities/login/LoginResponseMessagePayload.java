@@ -14,11 +14,7 @@ import lombok.NoArgsConstructor;
  * @since 12/06/2018
  * 
  * DESCRIPTION:
- * Some configuration information returned after the successful connection with OM server.   
- * 
- * TRIGGER MECHANISM: 
- * This message will be sent when the device wakes up, or power on, or reconnects to IoT hub after disconnection.
- * 
+ * Return the device configuration information like GPS, data stream sampling frequency and sending frequency.
  * 
  * This message is reply to the login request. It is send by the cloud to the device. 
  * It contains several settings device should use. 
