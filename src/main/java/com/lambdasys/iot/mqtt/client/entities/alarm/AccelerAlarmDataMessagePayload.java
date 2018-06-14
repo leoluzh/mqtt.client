@@ -6,11 +6,16 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=true)
-@Builder
 
 @SuppressWarnings("serial")
 public class AccelerAlarmDataMessagePayload extends AlarmDataMessagePayload {
 
 	public static final String TYPE_NAME = "acceler" ;
+	
+	/** Workarond to inherance **/
+	@Builder
+	public AccelerAlarmDataMessagePayload( Double latitude , Double longitude , Integer tripSn ) {
+		super(latitude, longitude, tripSn);
+	}
 	
 }
