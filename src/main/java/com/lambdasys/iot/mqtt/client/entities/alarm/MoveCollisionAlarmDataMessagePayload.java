@@ -29,7 +29,7 @@ public class MoveCollisionAlarmDataMessagePayload extends AlarmDataMessagePayloa
 	/** Workarond to inherance **/
 	@Builder
 	public MoveCollisionAlarmDataMessagePayload( Double latitude , Double longitude , Integer tripSn , Double gensorValue ) {
-		super(gensorValue, gensorValue, tripSn);
+		super(latitude, longitude, tripSn);
 		this.gensorValue = gensorValue;
 	}
 	
