@@ -19,9 +19,10 @@ import lombok.NoArgsConstructor;
  */
 
 
+/**
 @JsonTypeInfo(
 	use = JsonTypeInfo.Id.NAME ,
-	include = JsonTypeInfo.As.WRAPPER_OBJECT , 
+	include = JsonTypeInfo.As.EXTERNAL_PROPERTY , 
 	property = "type" )
 @JsonSubTypes({
 	@Type(value=WaterAlarmDataMessagePayload.class,name=WaterAlarmDataMessagePayload.TYPE_NAME) ,
@@ -32,6 +33,7 @@ import lombok.NoArgsConstructor;
 	@Type(value=ShakeAlarmDataMessagePayload.class,name=ShakeAlarmDataMessagePayload.TYPE_NAME) ,
 	@Type(value=TurnAlarmDataMessagePayload.class,name=TurnAlarmDataMessagePayload.TYPE_NAME) ,
 })
+**/
 
 @Data
 @NoArgsConstructor

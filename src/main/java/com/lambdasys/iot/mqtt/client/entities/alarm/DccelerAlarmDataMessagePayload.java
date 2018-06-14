@@ -1,5 +1,7 @@
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
-
+@JsonTypeName("dcceler")
 @SuppressWarnings("serial")
 public class DccelerAlarmDataMessagePayload extends AlarmDataMessagePayload {
 

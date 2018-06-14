@@ -14,7 +14,7 @@ public class DataStreamMessagePayload implements MessagePayload {
 
 	private String eventTime;
 	
-	@JsonProperty("itens")
+	@JsonProperty("items")
 	private DataStreamItemMessagePayload[] itens;
 	
 }

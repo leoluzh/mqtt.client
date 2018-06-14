@@ -1,5 +1,7 @@
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,8 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor
-@Builder
-
+@JsonTypeName("shake")
 @SuppressWarnings("serial")
 public class ShakeAlarmDataMessagePayload extends AlarmDataMessagePayload {
 
