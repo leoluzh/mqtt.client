@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="TestSuite" time="0.213" errors="0" skipped="0">
+<testsuite tests="26" failures="10" name="TestSuite" time="0.789" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9.0.4+11"/>
@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Applications/development/eclipse/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6347643847914536468.tmp"/>
+    <property name="classworlds.conf" value="/Applications/development/eclipse/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf15543781499469279222.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/leoluzh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="jdk.debug" value="release"/>
@@ -61,8 +61,326 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest" name="testDeserialize" time="0.171"/>
-  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest" name="testSerialize" time="0.02"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.AccelerAlarmInformationMessageTest" name="testDeserialize" time="0.148">
+    <failure message="Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;acceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]" type="com.fasterxml.jackson.databind.exc.MismatchedInputException">com.fasterxml.jackson.databind.exc.MismatchedInputException: Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;acceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1342)
+	at com.fasterxml.jackson.databind.deser.impl.ExternalTypeHandler.complete(ExternalTypeHandler.java:240)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:910)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.AccelerAlarmInformationMessageTest.testDeserialize(AccelerAlarmInformationMessageTest.java:71)
+</failure>
+    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@33f88ab
+</system-out>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.AccelerAlarmInformationMessageTest" name="testSerialize" time="0.087"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest" name="testDeserialize" time="0.096">
+    <failure message="
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testDeserialize(java.lang.String) throws java.io.IOException requires a @DataProvider named : dataProviderJson" type="org.testng.TestNGException">org.testng.TestNGException: 
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testDeserialize(java.lang.String) throws java.io.IOException requires a @DataProvider named : dataProviderJson
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:513)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:691)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-err>[Utils] [ERROR] [Error] org.testng.TestNGException: 
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testDeserialize(java.lang.String) throws java.io.IOException requires a @DataProvider named : dataProviderJson
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:513)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:691)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+</system-err>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest" name="testSerialize" time="0.108">
+    <failure message="
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testSerialize(com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload) throws com.fasterxml.jackson.core.JsonProcessingException requires a @DataProvider named : dataProviderObject" type="org.testng.TestNGException">org.testng.TestNGException: 
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testSerialize(com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload) throws com.fasterxml.jackson.core.JsonProcessingException requires a @DataProvider named : dataProviderObject
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:513)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:691)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-err>[Utils] [ERROR] [Error] org.testng.TestNGException: 
+Method public void com.lambdasys.iot.mqtt.client.entities.alarm.AlarmInfomationMessageTest.testSerialize(com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload) throws com.fasterxml.jackson.core.JsonProcessingException requires a @DataProvider named : dataProviderObject
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:513)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:691)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+</system-err>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.CarMoveAlarmInformationMessageTest" name="testDeserialize" time="0.008">
+    <failure message="Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;dcceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]" type="com.fasterxml.jackson.databind.exc.MismatchedInputException">com.fasterxml.jackson.databind.exc.MismatchedInputException: Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;dcceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1342)
+	at com.fasterxml.jackson.databind.deser.impl.ExternalTypeHandler.complete(ExternalTypeHandler.java:240)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:910)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.CarMoveAlarmInformationMessageTest.testDeserialize(CarMoveAlarmInformationMessageTest.java:71)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.CarMoveAlarmInformationMessageTest" name="testSerialize" time="0.01"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.DccelerAlarmInformationMessageTest" name="testDeserialize" time="0.039">
+    <failure message="Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;dcceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]" type="com.fasterxml.jackson.databind.exc.MismatchedInputException">com.fasterxml.jackson.databind.exc.MismatchedInputException: Missing property &apos;type&apos; for external type id &apos;type&apos;
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;dcceler&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 146]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1342)
+	at com.fasterxml.jackson.databind.deser.impl.ExternalTypeHandler.complete(ExternalTypeHandler.java:240)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:910)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.DccelerAlarmInformationMessageTest.testDeserialize(DccelerAlarmInformationMessageTest.java:71)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.DccelerAlarmInformationMessageTest" name="testSerialize" time="0.02"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.MoveCollisionAlarmInformationMessageTest" name="testDeserialize" time="0.009">
+    <failure message="Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;moveCollision&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 97] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;moveCollision&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 97] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:822)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1152)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1582)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1560)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:882)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.MoveCollisionAlarmInformationMessageTest.testDeserialize(MoveCollisionAlarmInformationMessageTest.java:72)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.MoveCollisionAlarmInformationMessageTest" name="testSerialize" time="0.017"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.ShakeAlarmInformationMessageTest" name="testDeserialize" time="0.006">
+    <failure message="Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;shake&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 89] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;shake&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 89] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:822)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1152)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1582)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1560)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:882)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.ShakeAlarmInformationMessageTest.testDeserialize(ShakeAlarmInformationMessageTest.java:72)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.ShakeAlarmInformationMessageTest" name="testSerialize" time="0.009"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.TurnAlarmInformationMessageTest" name="testDeserialize" time="0.009">
+    <failure message="Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;turn&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 88] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;gensorValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;turn&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;gensorValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 88] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;gensorValue&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:822)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1152)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1582)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1560)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:882)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.TurnAlarmInformationMessageTest.testDeserialize(TurnAlarmInformationMessageTest.java:63)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.TurnAlarmInformationMessageTest" name="testSerialize" time="0.015"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.WaterAlarmInformationMessageTest" name="testDeserialize" time="0.027">
+    <failure message="Unrecognized field &quot;waterValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;water&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;waterValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 88] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;waterValue&quot;])" type="com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException">com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;waterValue&quot; (class com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload), not marked as ignorable (3 known properties: &quot;lon&quot;, &quot;trip_sn&quot;, &quot;lat&quot;])
+ at [Source: (String)&quot;{ &quot;type&quot;: &quot;water&quot;, &quot;eventTime&quot;: &quot;2017-05-03T08:57:11Z&quot; , &quot;data&quot;: { &quot;waterValue&quot;: 101.22 , &quot;lat&quot; : 114.05540500000001 , &quot;lon&quot; : 22.66381333333333 , &quot;trip_sn&quot; : 12345} }&quot;; line: 1, column: 88] (through reference chain: com.lambdasys.iot.mqtt.client.entities.alarm.AlarmMessagePayload[&quot;data&quot;]-&gt;com.lambdasys.iot.mqtt.client.entities.alarm.AlarmDataMessagePayload[&quot;waterValue&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:822)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1152)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1582)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1560)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:882)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeWithExternalTypeId(BeanDeserializer.java:858)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:324)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.alarm.WaterAlarmInformationMessageTest.testDeserialize(WaterAlarmInformationMessageTest.java:73)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.alarm.WaterAlarmInformationMessageTest" name="testSerialize" time="0.005"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessageTest" name="testDeserialize" time="0.008">
+    <failure message="Cannot deserialize instance of `com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessagePayload[]` out of START_OBJECT token
+ at [Source: (String)&quot;{ &quot;imei&quot;: &quot;7997444561&quot;, &quot;serialNumber&quot;: &quot;7997444561&quot;, &quot;sim&quot;: &quot;34234324&quot;, &quot;swVersion&quot;: &quot;EN_0.21-8.25-8.5.0-16.64&quot; }&quot;; line: 1, column: 1]" type="com.fasterxml.jackson.databind.exc.MismatchedInputException">com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessagePayload[]` out of START_OBJECT token
+ at [Source: (String)&quot;{ &quot;imei&quot;: &quot;7997444561&quot;, &quot;serialNumber&quot;: &quot;7997444561&quot;, &quot;sim&quot;: &quot;34234324&quot;, &quot;swVersion&quot;: &quot;EN_0.21-8.25-8.5.0-16.64&quot; }&quot;; line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1342)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1138)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1092)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.handleNonArray(ObjectArrayDeserializer.java:330)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:175)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:21)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2992)
+	at com.lambdasys.iot.mqtt.client.entities.Message.deserialize(Message.java:53)
+	at com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessageTest.testDeserialize(DataStreamMessageTest.java:59)
+</failure>
+  </testcase>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessageTest" name="testSerialize" time="0.011"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.data.DataStreamMessageTest" name="testSerialize" time="0.001"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.gps.GPSDataMessageTest" name="testDeserialize" time="0.008"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.gps.GPSDataMessageTest" name="testSerialize" time="0.007"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.gps.GPSDataMessageTest" name="testSerialize" time="0.005"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest" name="testDeserialize" time="0.113"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginRequestMessageTest" name="testSerialize" time="0.01"/>
   <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest" name="testDeserialize" time="0.009"/>
-  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest" name="testSerialize" time="0.013"/>
+  <testcase classname="com.lambdasys.iot.mqtt.client.entities.login.LoginResponseMessageTest" name="testSerialize" time="0.004"/>
 </testsuite>

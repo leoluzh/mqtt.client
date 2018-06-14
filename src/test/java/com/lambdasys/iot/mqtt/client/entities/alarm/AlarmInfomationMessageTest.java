@@ -21,9 +21,9 @@ import com.lambdasys.iot.mqtt.client.entities.gps.GPSDataMessagePayload;
  *
  */
 
-
+@Test(enabled=false)
 @SuppressWarnings("serial")
-public abstract class AlarmInfomationMessageTest implements Serializable {
+public class AlarmInfomationMessageTest implements Serializable {
 
 	protected AlarmInformationMessage message;
 
@@ -37,12 +37,11 @@ public abstract class AlarmInfomationMessageTest implements Serializable {
 		this.message = null;
 	}
 
-	public abstract Object[][] dataProviderJson();
+	public Object[][] dataProviderJson(){ return null ; };
 	
-	public abstract Object[][] dataProviderObject();
+	public Object[][] dataProviderObject(){ return null; };
 	
-	@Test(
-		  dataProvider="dataProviderObject",
+	@Test(dataProvider="dataProviderObject",
 		  description="Testing Json serialization.")
 	public void testSerialize( AlarmMessagePayload payload ) throws JsonProcessingException {
 		String json = message.serialize( payload );
