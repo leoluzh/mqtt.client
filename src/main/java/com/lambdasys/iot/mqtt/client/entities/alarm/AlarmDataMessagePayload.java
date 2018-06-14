@@ -30,6 +30,7 @@ import lombok.NoArgsConstructor;
 	@Type(value=CarMoveAlarmDataMessagePayload.class, name=CarMoveAlarmDataMessagePayload.TYPE_NAME) ,
 	@Type(value=MoveCollisionAlarmDataMessagePayload.class, name=MoveCollisionAlarmDataMessagePayload.TYPE_NAME) ,
 	@Type(value=ShakeAlarmDataMessagePayload.class,name=ShakeAlarmDataMessagePayload.TYPE_NAME) ,
+	@Type(value=TurnAlarmDataMessagePayload.class,name=TurnAlarmDataMessagePayload.TYPE_NAME) ,
 })
 
 @Data
