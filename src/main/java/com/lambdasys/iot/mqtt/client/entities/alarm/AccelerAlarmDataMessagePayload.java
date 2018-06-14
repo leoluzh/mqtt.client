@@ -4,6 +4,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 12/06/2018
+ *
+ */
+
 @Data
 @EqualsAndHashCode(callSuper=true)
 
