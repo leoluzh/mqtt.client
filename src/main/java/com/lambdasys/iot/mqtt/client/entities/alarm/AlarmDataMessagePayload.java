@@ -1,11 +1,22 @@
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 12/06/2018
+ *
+ */
 
 
 @JsonTypeInfo(
@@ -22,12 +33,18 @@ import lombok.Data;
 })
 
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
 @SuppressWarnings("serial")
 public class AlarmDataMessagePayload implements MessagePayload {
 
-	private Double lat;
-	private Double lon;
-	private Integer trip_sn;
+	@JsonProperty("lat")
+	protected Double latitude;
+	
+	@JsonProperty("lon")
+	protected Double longitude;
+	
+	@JsonProperty("trip_sn")
+	protected Integer tripSn;
 	
 }
