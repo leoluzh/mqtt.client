@@ -3,6 +3,7 @@ package com.lambdasys.iot.mqtt.client.entities.alarm;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * 
@@ -13,6 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 
 @SuppressWarnings("serial")
