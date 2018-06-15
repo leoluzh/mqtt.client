@@ -18,6 +18,13 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 13/06/2018
+ *
+ */
 
 @NoArgsConstructor
 @AllArgsConstructor
