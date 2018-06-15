@@ -2,6 +2,7 @@ package com.lambdasys.iot.mqtt.client.entities.data;
 
 import com.lambdasys.iot.mqtt.client.entities.Message;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +19,7 @@ import lombok.EqualsAndHashCode;
 
 @Builder
 @Data
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 
 @SuppressWarnings("serial")

@@ -26,8 +26,8 @@ public class VehicleInformationMessagePayload implements MessagePayload {
 
 	private String type;
 	
-	//@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
-	//private Date date;
-	private String eventTime;
+	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
+	private Date date;
+	//private String eventTime;
 	
 }

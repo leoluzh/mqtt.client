@@ -11,12 +11,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.lambdasys.iot.mqtt.client.entities.Message;
 
 @Test(enabled=DataStreamMessageTest.TEST_ENABLED)
 @SuppressWarnings("serial")
 public class DataStreamMessageTest implements Serializable {
 
-	public static final boolean TEST_ENABLED = false;
+	public static final boolean TEST_ENABLED = true;
 	protected DataStreamMessage message;
 
 	@BeforeSuite(description="Inicializando recursos para teste de DataStreamMessage...")
@@ -33,15 +34,27 @@ public class DataStreamMessageTest implements Serializable {
 	public Object[][] dataProviderJson(){
 		//TODO: Verificar documento ... campo swVersion ou appVersion??
 		return new Object[][] {
-			{"{ \"imei\": \"7997444561\", \"serialNumber\": \"7997444561\", \"sim\": \"34234324\", \"swVersion\": \"EN_0.21-8.25-8.5.0-16.64\" }"} ,
+			{ "[ { \"eventTime\": \"2017-05-03T08:57:11Z\", \"items\": " + 
+		     " [ { \"id\": 496, \"name\": \"battery_voltage\", \"value\": \"13\" }," + 
+				"{ \"id\": 768, \"name\":\"rotating_speed\", \"value\": \"5000\" } ] } , " + 
+		     " { \"eventTime\": \"2017-05-03T08:57:11Z\", \"items\": " + 
+				"[ { \"id\": 496, \"name\": \"battery_voltage\",\"value\": \"13\" }," + 
+		         " { \"id\": 768, \"name\": \"rotating_speed\", \"value\": \"5000\" } ] } ]" } ,
 		};
 	}
 	
 	@DataProvider(name="dataProviderObject")
 	public Object[][] dataProviderObject(){
 		return new Object[][] {
-			{ DataStreamMessagePayload.builder().build() } ,
-			{ DataStreamMessagePayload.builder().build() } ,
+			//TODO: Find something to replace array to list ... 
+			{ DataStreamMessagePayload.builder().eventTime( this.message.strToDate("2017-05-03T08:57:11Z") ).itens( new DataStreamItemMessagePayload[] {
+					DataStreamItemMessagePayload.builder().id( 496 ).name( "battery_voltage" ).value("13").build() ,
+					DataStreamItemMessagePayload.builder().id( 768 ).name( "rotating_speed" ).value("5000").build() ,
+			} ).build() } ,
+			{ DataStreamMessagePayload.builder().eventTime( this.message.strToDate("2017-05-03T08:57:11Z") ).itens( new DataStreamItemMessagePayload[] {
+					DataStreamItemMessagePayload.builder().id( 496 ).name( "battery_voltage" ).value("13").build() ,
+					DataStreamItemMessagePayload.builder().id( 768 ).name( "rotating_speed" ).value("5000").build() ,
+			} ).build() } ,
 		};
 	}
 	
