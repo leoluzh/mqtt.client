@@ -10,6 +10,8 @@ import org.joda.time.format.DateTimeFormatter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper.DefaultTyping;
+import com.fasterxml.jackson.databind.jsontype.NamedType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -59,6 +61,10 @@ public class Message<T> implements Serializable {
     
     public Date strToDate( String date ) {
     	return this.formatter.parseDateTime( date ).toDate();
+    }
+    
+    public void registerSubTypes( NamedType... namedTypes ) {
+    	this.objectMapper.registerSubtypes( namedTypes );
     }
     
 }

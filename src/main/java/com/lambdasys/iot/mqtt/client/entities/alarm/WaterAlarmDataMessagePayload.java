@@ -1,5 +1,6 @@
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import lombok.Builder;
@@ -29,6 +30,7 @@ public class WaterAlarmDataMessagePayload extends AlarmDataMessagePayload {
 
 	public static final String TYPE_NAME = "water" ; 
 	
+	@JsonProperty("waterValue")
 	protected Integer waterValue;
 
 	@Builder

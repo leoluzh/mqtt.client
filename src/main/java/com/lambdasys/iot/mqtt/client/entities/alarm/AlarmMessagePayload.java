@@ -5,6 +5,8 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeId;
+import com.fasterxml.jackson.databind.jsontype.NamedType;
 import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -40,6 +42,28 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("serial")
 public class AlarmMessagePayload implements MessagePayload {
 
+	public static final NamedType[] SUBTYPES;
+	
+	static {
+		SUBTYPES = new NamedType[]{
+				new NamedType( WaterAlarmDataMessagePayload.class , WaterAlarmDataMessagePayload.TYPE_NAME ) ,
+				new NamedType( AccelerAlarmDataMessagePayload.class, AccelerAlarmDataMessagePayload.TYPE_NAME ) ,
+				new NamedType( DccelerAlarmDataMessagePayload.class, DccelerAlarmDataMessagePayload.TYPE_NAME ) , 
+				new NamedType( CarMoveAlarmDataMessagePayload.class, MoveCollisionAlarmDataMessagePayload.TYPE_NAME ) ,
+				new NamedType( MoveCollisionAlarmDataMessagePayload.class, MoveCollisionAlarmDataMessagePayload.TYPE_NAME ) ,
+				new NamedType( ShakeAlarmDataMessagePayload.class, ShakeAlarmDataMessagePayload.TYPE_NAME ) ,
+				new NamedType( TurnAlarmDataMessagePayload.class, TurnAlarmDataMessagePayload.TYPE_NAME )
+		};
+	}
+	
+	@JsonTypeId
+	@JsonProperty("type")
+	protected String type;
+
+	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
+	protected Date eventTime;
+	//private String eventTime;
+
 	@JsonTypeInfo(
 			use = JsonTypeInfo.Id.NAME ,
 			include = JsonTypeInfo.As.EXTERNAL_PROPERTY , 
@@ -52,13 +76,7 @@ public class AlarmMessagePayload implements MessagePayload {
 			@Type(value=MoveCollisionAlarmDataMessagePayload.class, name=MoveCollisionAlarmDataMessagePayload.TYPE_NAME) ,
 			@Type(value=ShakeAlarmDataMessagePayload.class,name=ShakeAlarmDataMessagePayload.TYPE_NAME) ,
 			@Type(value=TurnAlarmDataMessagePayload.class,name=TurnAlarmDataMessagePayload.TYPE_NAME) ,
-		})	
-	protected String type;
-
-	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
-	protected Date eventTime;
-	//private String eventTime;
-
+		})		
 	@JsonProperty(value="data")
 	protected AlarmDataMessagePayload data; 
 	

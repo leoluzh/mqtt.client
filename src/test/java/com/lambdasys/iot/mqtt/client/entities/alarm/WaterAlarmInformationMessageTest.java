@@ -25,12 +25,12 @@ public class WaterAlarmInformationMessageTest implements Serializable {
 
 	protected AlarmInformationMessage message;
 
-	@BeforeSuite(description="Inicializando recursos para teste de AlarmInformationMessage...")
+	@BeforeSuite(description="Inicializando recursos para teste de WaterAlarmInformationMessage...")
 	public void setUp() {
 		this.message = AlarmInformationMessage.builder().build();;
 	}
 	
-	@AfterSuite(description="Finalizando recursos para teste de AlarmInformationMessage...")
+	@AfterSuite(description="Finalizando recursos para teste de WaterAlarmInformationMessage...")
 	public void tearDown() {
 		this.message = null;
 	}

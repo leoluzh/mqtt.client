@@ -1,3 +1,4 @@
+
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

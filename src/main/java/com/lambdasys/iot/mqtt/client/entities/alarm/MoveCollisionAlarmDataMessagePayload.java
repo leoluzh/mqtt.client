@@ -1,5 +1,6 @@
 package com.lambdasys.iot.mqtt.client.entities.alarm;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import lombok.Builder;
@@ -28,6 +29,7 @@ public class MoveCollisionAlarmDataMessagePayload extends AlarmDataMessagePayloa
 	 * gensorValue" is the horizontal acceleration，It's based on an algorithm. 4.0 * 9.8 (gravity acceleration const)
 	 */
 	
+	@JsonProperty("gensorValue")
 	protected Double gensorValue;
 	
 	/** Workarond to inherance **/
@@ -36,5 +38,5 @@ public class MoveCollisionAlarmDataMessagePayload extends AlarmDataMessagePayloa
 		super(latitude, longitude, tripSn);
 		this.gensorValue = gensorValue;
 	}
-	
+		
 }

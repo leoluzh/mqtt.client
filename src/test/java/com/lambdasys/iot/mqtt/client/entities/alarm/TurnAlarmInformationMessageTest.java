@@ -17,12 +17,12 @@ public class TurnAlarmInformationMessageTest implements Serializable {
 
 	protected AlarmInformationMessage message;
 
-	@BeforeSuite(description="Inicializando recursos para teste de AlarmInformationMessage...")
+	@BeforeSuite(description="Inicializando recursos para teste de TurnAlarmInformationMessage...")
 	public void setUp() {
 		this.message = AlarmInformationMessage.builder().build();;
 	}
 	
-	@AfterSuite(description="Finalizando recursos para teste de AlarmInformationMessage...")
+	@AfterSuite(description="Finalizando recursos para teste de TurnAlarmInformationMessage...")
 	public void tearDown() {
 		this.message = null;
 	}
@@ -30,7 +30,7 @@ public class TurnAlarmInformationMessageTest implements Serializable {
 	@DataProvider(name="dataProviderJson")
 	public Object[][] dataProviderJson(){
 		return new Object[][] {
-			{ "{ \"type\": \"turn\", \"eventTime\": \"2017-05-03T08:57:11Z\" , \"data\": { \"gensorValue\": 101.22 , \"lat\" : 114.05540500000001 , \"lon\" : 22.66381333333333 , \"trip_sn\" : 12345} }" 	},
+			{ "{ \"type\": \"turn\", \"eventTime\": \"2017-05-03T08:57:11Z\" , \"data\": { \"lat\" : 114.05540500000001 , \"lon\" : 22.66381333333333 , \"trip_sn\" : 12345} }" 	},
 		};
 	}
 	
