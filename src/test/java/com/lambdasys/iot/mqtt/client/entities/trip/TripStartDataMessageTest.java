@@ -58,11 +58,11 @@ public class TripStartDataMessageTest implements Serializable {
 						.startTime( message.strToDate( "2017-05-03T08:57:11Z" ) )
 						.tripSn( 87 ).build() ).build() } ,
 			{ TripMessagePayload.builder()
-							.type(TripStartDataMessagePayload.TYPE_NAME)
-							.eventTime( message.strToDate( "2017-05-03T08:57:11Z" ) )
-							.data( TripStartDataMessagePayload.builder()
-									.startTime( message.strToDate( "2017-05-03T08:57:11Z" ) )
-									.tripSn( 87 ).build() ).build() } ,
+				.type(TripStartDataMessagePayload.TYPE_NAME)
+				.eventTime( message.strToDate( "2017-05-03T08:57:11Z" ) )
+				.data( TripStartDataMessagePayload.builder()
+						.startTime( message.strToDate( "2017-05-03T08:57:11Z" ) )
+						.tripSn( 87 ).build() ).build() } ,
 		};
 	}
 	

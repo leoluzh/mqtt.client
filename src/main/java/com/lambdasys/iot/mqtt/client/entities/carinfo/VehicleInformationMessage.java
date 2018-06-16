@@ -20,10 +20,4 @@ public class VehicleInformationMessage extends Message<VehicleInformationMessage
 	public static final Boolean CONTAINS_TIMESTAMP = true ;
 
 	
-	public void test() {
-		VehicleInformationMessage v = VehicleInformationMessage.builder().build();
-		//usado para serializar ou deserializar conteudo ... payload ...
-		v.getPayload();
-	}
-	
 }
