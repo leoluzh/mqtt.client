@@ -19,6 +19,8 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 @SuppressWarnings("serial")
 public class HexaDecimalSerializer extends StdSerializer<Integer> implements Serializable {
 
+	private static final String HEXADECIMAL_PREFIX = "0x" ;
+	
 	public HexaDecimalSerializer() {
 		super(Integer.class);
 	}
@@ -30,9 +32,16 @@ public class HexaDecimalSerializer extends StdSerializer<Integer> implements Ser
 	@Override
 	public void serialize(Integer value, JsonGenerator gen, SerializerProvider provider) throws IOException {
 		if( Objects.nonNull( value ) ) {
-			gen.writeString( Integer.toHexString( value ) );
+			gen.writeString( HEXADECIMAL_PREFIX + Integer.toHexString( value ) );
 		}
 		
 	}
+	
+	/**
+	public static void main( String... args ) {
+		System.out.println( "Integer To Hexadecimal: 0x" +  Integer.toHexString( 12 ) );
+		System.out.println( "Hexadecimal To Integer: " + Integer.decode( HEX_PREFIX + Integer.toHexString( 12 ) ) );
+	}
+	**/
 
 }

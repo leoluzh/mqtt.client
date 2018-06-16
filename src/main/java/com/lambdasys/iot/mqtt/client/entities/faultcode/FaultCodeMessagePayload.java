@@ -1,5 +1,7 @@
 package com.lambdasys.iot.mqtt.client.entities.faultcode;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
@@ -27,7 +29,6 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("serial")
 public class FaultCodeMessagePayload implements MessagePayload {
 
-	private FaultCodeDataMessagePayload[] data;
 	
 	@JsonProperty("lon")
 	private Double longitude;
@@ -38,8 +39,11 @@ public class FaultCodeMessagePayload implements MessagePayload {
 	@JsonProperty("trip_sn")
 	private String tripSn;
 	
-	//@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
-	//private Date eventTime;
-	private String eventTime;
+	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
+	private Date eventTime;
+	
+	@JsonProperty(value="data")
+	private FaultCodeDataMessagePayload[] data;
+	
 	
 }

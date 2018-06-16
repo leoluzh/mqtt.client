@@ -30,7 +30,7 @@ public class HexaDecimalDeserializer extends StdDeserializer<Integer> implements
 
 	@Override
 	public Integer deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-		return Integer.parseInt( p.getText() ) ;
+		return Integer.decode( p.getText() ) ;
 	}
 
 }

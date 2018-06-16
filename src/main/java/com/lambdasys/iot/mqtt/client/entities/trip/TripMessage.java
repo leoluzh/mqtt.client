@@ -2,6 +2,11 @@ package com.lambdasys.iot.mqtt.client.entities.trip;
 
 import com.lambdasys.iot.mqtt.client.entities.Message;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * 
  * @author Leonardo Luz Fernandes
@@ -12,6 +17,11 @@ import com.lambdasys.iot.mqtt.client.entities.Message;
  * The trip is defined by two messages one trip start and the second one when trip ends.
  * 
  */
+
+@Builder
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=true)
 
 @SuppressWarnings("serial")
 public class TripMessage extends Message<TripMessagePayload> {

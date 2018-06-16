@@ -1,10 +1,20 @@
 package com.lambdasys.iot.mqtt.client.entities.trip;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 12/06/2018
+ *
+ */
+
+
+/**
 @JsonTypeInfo(
 		use = JsonTypeInfo.Id.NAME ,
 		include = JsonTypeInfo.As.WRAPPER_OBJECT , 
@@ -13,7 +23,12 @@ import com.lambdasys.iot.mqtt.client.entities.MessagePayload;
 		@Type(value=TripStartContentMessagePayload.class,name=TripStartContentMessagePayload.TYPE_NAME) ,
 		@Type(value=TripEndContentMessagePayload.class,name=TripEndContentMessagePayload.TYPE_NAME) ,
 	})
+**/
+
+@Data
+@NoArgsConstructor
+
 @SuppressWarnings("serial")
-public class TripDataContentMessagePayload implements MessagePayload {
+public class TripDataMessagePayload implements MessagePayload {
 
 }

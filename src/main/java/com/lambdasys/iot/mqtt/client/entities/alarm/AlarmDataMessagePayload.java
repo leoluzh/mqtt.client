@@ -39,6 +39,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 @SuppressWarnings("serial")
 public class AlarmDataMessagePayload implements MessagePayload {
 

@@ -1,5 +1,17 @@
 package com.lambdasys.iot.mqtt.client.entities.data;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import lombok.Getter;
+
+
 public enum DataStreamItem {
 	
 	LIGHT_STATUS_HIGH_BEAM( 0x0001 , "0x0001" , "Light Status (High Beam)" , DataStreamItemConstants.ON_OFF_VALUES ) ,
@@ -99,33 +111,78 @@ public enum DataStreamItem {
 	DISTANCE_TRAVELED_WITH_MALFUNCTION_INDICATOR_LAMP_MIL_ON_KM( 0x0621 , "0x0621" , "" ) ,
 	DISTANCE_TRAVELED_SINCE_CODES_CLEARED_KM( 0x0638 , "0x0638" , "" ) ,
 	FREEZE_DTC( 0x066B , "0x066B" , "" ) ;
-
+	
 	DataStreamItem( Integer id , String xId , String name ){
 		this.id= id ;
 		this.xId = xId;
 		this.name = name ;
-		this.values = null;
+		this.options = null;
 	}
 	
-	DataStreamItem( Integer id , String xId , String name , Object[] values ){
+	DataStreamItem( Integer id , String xId , String name , Object[] options ){
 		this.id= id ;
 		this.xId = xId; 
-		this.values = values;
+		this.options = options;
 	}
 
-	DataStreamItem( Integer id , String xId , String name , Object[] values , boolean deprecated ){
+	DataStreamItem( Integer id , String xId , String name , Object[] options , boolean deprecated ){
 		this.id= id ;
 		this.xId = xId; 
 		this.name = name;
-		this.values = values ;
+		this.options = options ;
 		this.deprecated = deprecated;
 	}
 
-	
-	private Integer id;
+	@JsonValue
+	@JsonProperty("id")
+	@Getter
 	private String xId;
+		
+	@Getter
+	private Integer id;
+	
+	@Getter
 	private String name;
+	
+	@Getter
 	private boolean deprecated;
-	private Object[] values;
+	
+	@Getter
+	private Object[] options;
+	
+	private static final Map<Integer,DataStreamItem> CACHE;
+	
+	static {
+		CACHE = valuesAsList()
+				.stream()
+				.collect(Collectors.toMap( 
+						x -> x.getId() , 
+						x -> x ) ) ;
+	}
+	
+	public static List<DataStreamItem> valuesAsList(){
+		return Arrays.asList( DataStreamItem.values() );
+	}
+	
+	public static Map<Integer,DataStreamItem> valuesAsMap(){
+		return CACHE;
+	}
+	
+	public static DataStreamItem fromId( Integer id ) {
+		return CACHE.get( id );
+	}
+	
+	@JsonCreator
+	public static DataStreamItem fromId( String xId ) {
+		return CACHE.get( Integer.decode( xId ) );
+	}
+	
+	public static String toHexa( Integer value ) {
+		return "0x" + Integer.toHexString( value );
+	}
+	
+	public static Integer toInt( String hexadecimal ) {
+		return Integer.decode( hexadecimal );
+	}
 	
 }

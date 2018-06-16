@@ -2,6 +2,11 @@ package com.lambdasys.iot.mqtt.client.entities.faultcode;
 
 import com.lambdasys.iot.mqtt.client.entities.Message;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * 
  * @author Leonardo Luz Fernandes
@@ -10,6 +15,11 @@ import com.lambdasys.iot.mqtt.client.entities.Message;
  * 
  * 
  */
+
+@Builder
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=true)
 
 @SuppressWarnings("serial")
 public class FaultCodeMessage extends Message<FaultCodeMessagePayload> {
