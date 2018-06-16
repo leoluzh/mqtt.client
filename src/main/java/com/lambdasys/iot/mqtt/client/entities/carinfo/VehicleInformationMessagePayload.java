@@ -52,7 +52,7 @@ public class VehicleInformationMessagePayload implements MessagePayload {
 	private String type;
 	
 	@JsonFormat(shape=Shape.STRING,pattern=MessagePayload.EVENT_TIME_PATTERN)
-	private Date date;
+	private Date eventTime;
 
 	@JsonTypeInfo(
 			use = JsonTypeInfo.Id.NAME ,

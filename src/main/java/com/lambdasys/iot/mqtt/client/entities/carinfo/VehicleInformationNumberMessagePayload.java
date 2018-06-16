@@ -23,6 +23,6 @@ public class VehicleInformationNumberMessagePayload extends VehicleInformationDa
 	public static final String TYPE_NAME = "VIN" ;
 	
 	@JsonProperty("VIN")
-	private String vim;
+	private String vin;
 	
 }

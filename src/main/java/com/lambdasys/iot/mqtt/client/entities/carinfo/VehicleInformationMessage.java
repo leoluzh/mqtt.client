@@ -18,6 +18,5 @@ public class VehicleInformationMessage extends Message<VehicleInformationMessage
 	public static final String DIRECTION = "Sent by IoT to Cloud" ;
 	public static final Boolean RESPONSE_REQUIRED = false ;
 	public static final Boolean CONTAINS_TIMESTAMP = true ;
-
 	
 }
