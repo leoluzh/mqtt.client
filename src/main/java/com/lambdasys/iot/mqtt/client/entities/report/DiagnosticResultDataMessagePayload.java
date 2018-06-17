@@ -42,7 +42,7 @@ public class DiagnosticResultDataMessagePayload implements MessagePayload {
 	@JsonProperty("dtcs")
 	private DiagnosticResultDataDtcsMessagePayload[] dtcs;
 	
-	@JsonProperty("datastream")
-	private DiagnosticResultDataStreamMessagePayload[] dataStream;
+	@JsonProperty("datastreams")
+	private DiagnosticResultDataStreamMessagePayload[] dataStreams;
 	
 }

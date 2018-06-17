@@ -32,7 +32,8 @@ public class DiagnosticResultMessagePayload implements MessagePayload {
 	@JsonProperty("eventTime")
 	private Date eventTime;
 	
-	@JsonProperty("data")
-	private DiagnosticResultDataMessagePayload[] data;
+	@JsonProperty("items")
+	//@JsonProperty("data")
+	private DiagnosticResultDataMessagePayload[] items;
 	
 }

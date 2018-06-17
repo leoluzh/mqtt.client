@@ -2,6 +2,11 @@ package com.lambdasys.iot.mqtt.client.entities.report;
 
 import com.lambdasys.iot.mqtt.client.entities.Message;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 /**
  * 
  * @author Leonardo Luz Fernandes
@@ -9,6 +14,11 @@ import com.lambdasys.iot.mqtt.client.entities.Message;
  * @since 16/06/2018
  *
  */
+
+@Data
+@EqualsAndHashCode(callSuper=true)
+@NoArgsConstructor
+@Builder
 
 @SuppressWarnings("serial")
 public class DiagnosticResultMessage extends Message<DiagnosticResultMessagePayload> {

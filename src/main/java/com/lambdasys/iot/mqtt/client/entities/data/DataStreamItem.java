@@ -6,12 +6,22 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 import lombok.Getter;
 
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 16/06/2018
+ *
+ */
 
+@JsonFormat(shape=Shape.STRING)
 public enum DataStreamItem {
 	
 	LIGHT_STATUS_HIGH_BEAM( 0x0001 , "0x0001" , "Light Status (High Beam)" , DataStreamItemConstants.ON_OFF_VALUES ) ,
