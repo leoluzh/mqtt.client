@@ -5,6 +5,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import lombok.Getter;
 
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 16/06/2018
+ *
+ */
+
 @JsonTypeName(value=DiagnosticVehicleInspectorErrorEventMessagePayload.TYPE_NAME)
 @SuppressWarnings("serial")
 public class DiagnosticVehicleInspectorErrorEventMessagePayload extends DiagnosticEventMessagePayload {

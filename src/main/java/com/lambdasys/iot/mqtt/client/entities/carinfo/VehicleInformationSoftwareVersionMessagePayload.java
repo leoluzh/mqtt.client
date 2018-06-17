@@ -9,6 +9,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * @author Leonardo Luz Fernandes
+ * @version 0.1
+ * @since 16/06/2018
+ *
+ */
+
 @Data
 @EqualsAndHashCode(callSuper=true)
 @NoArgsConstructor

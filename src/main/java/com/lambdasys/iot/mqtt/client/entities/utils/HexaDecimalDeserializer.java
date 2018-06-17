@@ -1,4 +1,4 @@
-package com.lambdasys.iot.mqtt.client.entities.data;
+package com.lambdasys.iot.mqtt.client.entities.utils;
 
 import java.io.IOException;
 import java.io.Serializable;
